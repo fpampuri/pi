@@ -73,7 +73,9 @@ int esFilaAmiga(const int f1[], const int f2[]){
                 case IGUAL: i++; j++; break;
             }
         }
-        i++;
+        else i++;
+        if(j == COLS && i != COLS)  // Si se recorre todo el vector 2 y el primero no llega al final, hay algún elemento
+            filas_amigas = FALSE;   // que no logró encontrar
     }
     return filas_amigas;
 }
@@ -83,12 +85,12 @@ int esFilaAmiga(const int f1[], const int f2[]){
 int esAmiga(const int m1[][COLS], int fils1, const int m2[][COLS], int fils2){
     int i,j, existeFilaAmiga;
     existeFilaAmiga = TRUE;
-    for(i=0; i < fils1 && existeFilaAmiga ; i++){
+    for(i=0; (i < fils1) && existeFilaAmiga ; i++){
         existeFilaAmiga = FALSE;
 
-        for(j=0; j<fils2 && !existeFilaAmiga; j++){
+        for(j=0; (j<fils2) && !existeFilaAmiga; j++)
             existeFilaAmiga = esFilaAmiga(m1[i], m2[j]);
-        }
+        
     }
     return existeFilaAmiga;
 }
