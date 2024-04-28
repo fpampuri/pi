@@ -3,7 +3,7 @@
 #include <assert.h>
 #include "getnum.h"
 #include "random.h"
-
+#include <time.h>
 #define X 3
 #define FALSE 0
 #define TRUE !FALSE
@@ -78,22 +78,20 @@ int elegirNivel(void){
 }
 
 void leerNumero(int usr_num[]){
-    int n, i, j, digito;
-    int numValido = TRUE;
+    int n, i, j;
+    int numValido;
     printf("RECUERDA: El numero a adivinar es de %d digitos!\n", X);
     do{
         n = getint("Ingrese un numero entero sin digitos repetidos: ");
-        for(i=X-1; i>=0 && numValido; i--){
-            digito = n % 10; 
-            if( digito == 0)
+        for(i=X-1, numValido = TRUE; i>=0 && numValido; i--){
+            usr_num[i] = n % 10; 
+            if( usr_num[i] == 0)
                 numValido = FALSE;
             else
                 for(j=X-1; j>i; j--){
-                    if( usr_num[j] == digito)
+                    if( usr_num[i] == usr_num[j])
                         numValido = FALSE;
                 }
-            if(numValido) 
-                usr_num[i] = digito;
             n /= 10;
         }
     }

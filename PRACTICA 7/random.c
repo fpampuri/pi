@@ -4,7 +4,7 @@
 //
 //
 #include <stdlib.h>
-
+#include <time.h>
 
 double randNormalize(void) {
     return rand() / ((double) RAND_MAX + 1);
