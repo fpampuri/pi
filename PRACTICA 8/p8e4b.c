@@ -52,7 +52,8 @@ void jugar(tipoMazo mazo){
         ptosUser++;
     else if (configUser < configPC)
             ptosPC++;
-        else if(figuraUser > figuraPC)
+        else {
+            if(figuraUser > figuraPC)
             ptosUser++;
             else if(figuraUser < figuraPC)
                 ptosPC++;
@@ -60,6 +61,7 @@ void jugar(tipoMazo mazo){
                         ptosPC++;
                         ptosUser++;
                     }
+        }
 
     imprimirMano(manoUser, mazo, configUser, configPC, ptosUser, ptosPC);
     manoUser += CARTAS_POR_MANO;
