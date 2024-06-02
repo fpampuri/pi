@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "stdlib.h": "c",
-        "rankingadt.h": "c"
+        "rankingadt.h": "c",
+        "moveToFrontADT.C": "cpp"
     }
 }
