@@ -56,7 +56,7 @@ int belongsList(const listADT list, elemType elem) {
 }
 
 static int belongsRec(List list, elemType elem, compare cmp) {
-    if (list==NULL) {
+    if (list==NULL)  {
         return 0;
     }
     int c = cmp(list->head, elem);

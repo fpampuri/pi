@@ -2,6 +2,7 @@
     "files.associations": {
         "stdlib.h": "c",
         "rankingadt.h": "c",
-        "moveToFrontADT.C": "cpp"
+        "moveToFrontADT.C": "cpp",
+        "boolmatrixadt.h": "c"
     }
 }
